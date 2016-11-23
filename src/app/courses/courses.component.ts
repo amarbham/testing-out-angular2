@@ -4,7 +4,7 @@ import { CoursesService } from './courses.service'
 @Component({
   selector: 'courses',
   templateUrl: './courses.component.html',
-  providers: [CoursesService]
+  providers: [CoursesService],
 })
 
 
