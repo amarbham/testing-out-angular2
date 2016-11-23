@@ -8,6 +8,7 @@ import { AuthorsService} from './authors.service';
 })
 export class AuthorsComponent {
   authors;
+  title = "A title by an author";
 
   constructor( authorsService :AuthorsService) { 
     this.authors = authorsService.getAuthors();

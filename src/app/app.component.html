@@ -2,6 +2,13 @@
   <div class="pure-u-1-5"></div>
   <div class="pure-u-3-5">
     <h1>{{title}} </h1>
+    <input type="text" [(ngModel)]="title">
+    <input type="button" class="pure-button " (click)="title = ''" value="Clear">
+
+
+<a class="pure-button" href="#">
+    <i class="fa fa-star fa-lg"></i>
+</a>
       <courses></courses>
     <section>
       <authors></authors>
