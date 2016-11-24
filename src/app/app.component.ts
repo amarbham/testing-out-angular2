@@ -10,6 +10,11 @@ export class AppComponent {
     isFavourite: true
   }
 
+  tweet = {
+    likeCount:10,
+    isLike:false
+  }
+
   onFavouriteChange($event) {
     console.log($event)
   }

@@ -10,6 +10,10 @@
       <authors></authors>
     </section>
     <favourite (logEvent)="logEvent($event)"></favourite>
+    <like 
+      [isLike]="tweet.isLike"
+      [likeCount]="tweet.likeCount">
+    </like>
   </div>
   <div class="pure-u-1-5"></div>
 </div>
