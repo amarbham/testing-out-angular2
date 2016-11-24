@@ -4,7 +4,7 @@
     <h1>{{title}} </h1>
     <input type="text" [(ngModel)]="title">
     <input type="button" class="pure-button " (click)="title = ''" value="Clear">
-      <favourite></favourite>
+      <favourite [isFavourite]="post.isFavourite" (change)="onFavouriteChange($event)"></favourite>
       <courses></courses>
     <section>
       <authors></authors>

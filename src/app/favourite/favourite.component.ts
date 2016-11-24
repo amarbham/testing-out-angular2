@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'favourite',
@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
 })
 export class FavouriteComponent {
 
-  isFavourite;
+  @Input() isFavourite = false;
 
-  toggleFavourite(){
+  @Output() change = new EventEmitter();
+
+  toggleFavourite() {
     this.isFavourite = !this.isFavourite;
+    this.change.emit({ newValue: this.isFavourite });
   }
-
 }

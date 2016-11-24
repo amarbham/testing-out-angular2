@@ -5,5 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'app works!';
+  post = {
+    title: "Title",
+    isFavourite: true
+  }
+
+  onFavouriteChange($event) {
+    console.log($event)
+  }
 }
