@@ -1,4 +1,4 @@
-<a class="pure-button" href="#" (click)="toggleFavourite()">
+<a class="pure-button" href="#" (click)="toggleFavourite()" (change)="logEvent($event)">
   <i class="fa fa-sm" 
     [class.fa-star]="isFavourite"
     [class.fa-star-o]="!isFavourite">

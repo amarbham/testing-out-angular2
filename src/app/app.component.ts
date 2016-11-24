@@ -13,4 +13,8 @@ export class AppComponent {
   onFavouriteChange($event) {
     console.log($event)
   }
+
+  logEvent($event){
+    console.log('event', $event)
+  }
 }
