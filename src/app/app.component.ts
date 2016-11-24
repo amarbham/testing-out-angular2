@@ -7,19 +7,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   post = {
     title: "Title",
-    isFavourite: true
+    isFavourite: true,
+    voteCount: 10,
+    myVote: 0
   }
 
   tweet = {
-    likeCount:10,
-    isLike:false
+    likeCount: 10,
+    isLike: false
   }
-
   onFavouriteChange($event) {
     console.log($event)
   }
 
-  logEvent($event){
+  logEvent($event) {
     console.log('event', $event)
   }
 }
