@@ -1,3 +1,7 @@
+img {
+  max-width: 29%;
+}
+
 .comment--spaced {
     margin-bottom: 1.5em;
 }
