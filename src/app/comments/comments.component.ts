@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommentsService } from './comments.service';
 
 @Component({
@@ -7,15 +7,19 @@ import { CommentsService } from './comments.service';
   styleUrls: ['./comments.component.css'],
   providers: [CommentsService]
 })
-export class CommentsComponent {
+export class CommentsComponent implements OnInit{
   comments
   post = {
     likeCount: 10,
     isLike: false
   }
 
-  constructor(commentsService: CommentsService) {
-    this.comments = commentsService.getComments();
-  }
+  constructor(private commentsService: CommentsService) { }
 
+  ngOnInit(){
+    this.commentsService.getComments()
+      .then(comments => {
+        return this.comments = comments
+      })
+  }
 }
