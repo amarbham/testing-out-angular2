@@ -7,16 +7,17 @@ import { CommentsService } from './comments.service';
   styleUrls: ['./comments.component.css'],
   providers: [CommentsService]
 })
-export class CommentsComponent implements OnInit{
+export class CommentsComponent implements OnInit {
   comments
-  post = {
-    likeCount: 10,
-    isLike: false
-  }
-
+  
   constructor(private commentsService: CommentsService) { }
 
-  ngOnInit(){
+  onLikeUpdate($event){
+    console.log($event)
+    // TODO: make post with like update to server.
+  }
+
+  ngOnInit() {
     this.commentsService.getComments()
       .then(comments => {
         return this.comments = comments

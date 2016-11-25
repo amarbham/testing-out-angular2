@@ -7,7 +7,7 @@
     <div class="media-body">
       <strong> {{comment.title}} </strong>
       <p> {{comment.body}} </p>
-      <like [isLike]="post.isLike" [likeCount]="post.likeCount"></like>
+      <like (change)="onLikeUpdate($event)" [isLike]="comment.isLike" [likeCount]="comment.likeCount"></like>
     </div> 
   </div>
 </article>

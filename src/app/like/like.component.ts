@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'like',
@@ -9,9 +9,15 @@ export class LikeComponent {
   @Input() likeCount;
   @Input() isLike = false;
 
+  @Output() change = new EventEmitter();
+
   toggleLike($event) {
     this.isLike = !this.isLike;
     this.isLike ? this.likeCount++ : this.likeCount--;
+    this.change.emit( {like: this.isLike} )
     return this.likeCount;
   }
+
+
+
 }

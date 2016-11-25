@@ -4,12 +4,15 @@
     <h1>{{title}} </h1>
     <input type="text" [(ngModel)]="title">
     <input type="button" class="pure-button " (click)="title = ''" value="Clear">
-      <favourite [isFavourite]="post.isFavourite" (change)="onFavouriteChange($event)"></favourite>
+      <favourite 
+        (logEvent)="logEvent($event)" 
+        [isFavourite]="post.isFavourite"
+        (change)="onFavouriteChange($event)">
+      </favourite>
       <courses></courses>
     <section>
       <authors></authors>
     </section>
-    <favourite (logEvent)="logEvent($event)"></favourite>
     <voter [myVote]="post.myVote"[voteCount]="post.voteCount"></voter>
   <section>
     <comments></comments>
