@@ -10,10 +10,6 @@
       <authors></authors>
     </section>
     <favourite (logEvent)="logEvent($event)"></favourite>
-    <like 
-      [isLike]="tweet.isLike"
-      [likeCount]="tweet.likeCount">
-    </like>
     <voter [myVote]="post.myVote"[voteCount]="post.voteCount"></voter>
   <section>
     <comments></comments>

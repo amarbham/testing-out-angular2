@@ -1,0 +1,13 @@
+<article 
+  *ngFor="let comment of comments; let last = last" 
+  [ngClass]="{'comment--spaced': last}"
+   class="comment">
+  <div class="media">
+    <img class="media-figure" [src]="comment.image" alt="">
+    <div class="media-body">
+      <strong> {{comment.title}} </strong>
+      <p> {{comment.body}} </p>
+      <like [isLike]="post.isLike" [likeCount]="post.likeCount"></like>
+    </div> 
+  </div>
+</article>

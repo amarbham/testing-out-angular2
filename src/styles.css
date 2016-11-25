@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+    font: 400 1em/1.4 'Open Sans',sans-serif;
+}
+
+p {
+    color: #404040;
+    font: 400 1em/1.4 'Open Sans',sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: "Open Sans", sans-serif;
+    text-rendering: optimizeLegibility;
+    margin: 0 0 1.5em;
+}
