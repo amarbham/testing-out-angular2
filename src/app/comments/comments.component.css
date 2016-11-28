@@ -1,5 +1,6 @@
 img {
-  max-width: 29%;
+    max-width: 13%;
+    min-width: 75px;
 }
 
 .comment--spaced {

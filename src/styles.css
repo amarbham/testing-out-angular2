@@ -24,3 +24,7 @@ p {
 a {
     cursor: pointer;
 }
+
+.menu-custom {
+    text-align: center;
+}

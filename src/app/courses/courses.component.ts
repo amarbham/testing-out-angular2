@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoursesService } from './courses.service'
 
 @Component({
@@ -8,17 +8,18 @@ import { CoursesService } from './courses.service'
 })
 
 
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
 
   title = "The title of the courses page";
   courses;
   isHighlight = true;
 
-  constructor(coursesService: CoursesService) {
-    this.courses = coursesService.getCourses();
-  }
+  constructor(private coursesService : CoursesService){ }
 
-  onClick() {
-    console.log('clicked')
+  ngOnInit(){
+    this.coursesService.getCourses()
+      .then(courses => {
+        return this.courses = courses;
+      }) 
   }
 }
