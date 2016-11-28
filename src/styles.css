@@ -30,6 +30,7 @@ a {
 }
 
 input[type="text"] {
+    width: 120px;
     transition: width 1s;
     transition-timing-function: ease-out;
 }
