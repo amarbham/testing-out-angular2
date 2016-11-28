@@ -28,3 +28,8 @@ a {
 .menu-custom {
     text-align: center;
 }
+
+input[type="text"] {
+    transition: width 1s;
+    transition-timing-function: ease-out;
+}

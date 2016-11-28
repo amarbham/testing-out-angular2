@@ -12,7 +12,7 @@ export class AutoGrowDirective {
   constructor(private el: ElementRef, private renderer: Renderer) { }
 
   onFocus() {
-    this.renderer.setElementStyle(this.el.nativeElement, 'width', '200px');
+    this.renderer.setElementStyle(this.el.nativeElement, 'width', '500px');
   }
 
   onBlur() {
