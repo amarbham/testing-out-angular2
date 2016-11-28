@@ -6,6 +6,14 @@
   <input type="text" [value]="title" autoGrow> 
       <button (click)="onClick()" class="pure-button pure-button-primary">Submit</button>
   <ul>
-    <li *ngFor="let course of courses" [style.backgroundColor]="isHighlight ? '#EEEEEE' : 'grey'">{{course}}</li>
+    <div *ngIf="courses.length">
+      <li *ngFor="let course of courses, let i = index" 
+          [style.backgroundColor]="isHighlight ? '#EEEEEE' : 'grey'">
+          {{i + 1}} - {{course}}
+      </li>
+    </div>
+    <div *ngIf="courses.length === 0">
+      <p>You do not have any courses</p>
+    </div>
   </ul>
 </div>

@@ -1,6 +1,17 @@
 <div class="pure-g">
   <div class="pure-u-1-5"></div>
   <div class="pure-u-3-5">
+    <app-nav (change)="onViewChange($event)"></app-nav>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'courses'">
+          <courses> </courses>
+          <comments></comments>
+        </div>
+        <div *ngSwitchCase="'authors'">
+          <authors></authors>
+        </div>
+        <div *ngSwitchDefault>Default view</div>
+    </div>
     <h1>{{title}} </h1>
     <input type="text" [(ngModel)]="title">
     <input type="button" class="pure-button " (click)="title = ''" value="Clear">
@@ -9,14 +20,7 @@
         [isFavourite]="post.isFavourite"
         (change)="onFavouriteChange($event)">
       </favourite>
-      <courses></courses>
-    <section>
-      <authors></authors>
-    </section>
     <voter [myVote]="post.myVote"[voteCount]="post.voteCount"></voter>
-  <section>
-    <comments></comments>
-  </section>
   </div>
   <div class="pure-u-1-5"></div>
 </div>

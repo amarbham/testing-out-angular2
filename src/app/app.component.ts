@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  viewMode = 'courses';
   post = {
     title: "Title",
     isFavourite: true,
@@ -14,6 +15,10 @@ export class AppComponent {
 
   onFavouriteChange($event) {
     console.log($event)
+  }
+
+  onViewChange($event){
+    this.viewMode = $event.view;
   }
 
   logEvent($event) {

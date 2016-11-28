@@ -2,6 +2,7 @@
 html {
     box-sizing: border-box;
     font: 400 1em/1.4 'Open Sans',sans-serif;
+    overflow-y: scroll;
 }
 
 p {
@@ -18,4 +19,8 @@ p {
     font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
     margin: 0 0 1.5em;
+}
+
+a {
+    cursor: pointer;
 }

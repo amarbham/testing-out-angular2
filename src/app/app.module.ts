@@ -11,6 +11,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
 import { CommentsComponent } from './comments/comments.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CommentsComponent } from './comments/comments.component';
     FavouriteComponent,
     LikeComponent,
     VoterComponent,
-    CommentsComponent
+    CommentsComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
