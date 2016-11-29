@@ -7,11 +7,11 @@
   <ul>
       <li *ngFor="let course of courses, let i = index" 
           [style.backgroundColor]="isHighlight ? '#EEEEEE' : 'grey'">
-          <strong>{{i + 1}} - {{course.title}}</strong>
-          <p>Rating - {{course.rating}}</p>
-          <p>Students - {{course.students}}</p>
-          <p>Price - {{course.price}}</p>
-          <p>Released - {{course | json}}</p>
+          <strong>{{i + 1}} - {{course.title | uppercase}}</strong>
+          <p>Rating - {{course.rating | number  }}</p>
+          <p>Students - {{course.students | number:'2.2-2'}}</p>
+          <p>Price - {{course.price | currency: 'GBP':true:'2.2-2'}}</p>
+          <p>Released - {{course.releaseDate | date: 'fullDate' | uppercase}}</p>
       </li>
   </ul>
 </div>

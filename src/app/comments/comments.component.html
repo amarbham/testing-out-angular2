@@ -7,7 +7,7 @@
     <img class="media-figure" [src]="comment.image" alt="">
     <div class="media-body">
       <strong> {{comment.title}} </strong>
-      <p> {{comment.body}} </p>
+      <p> {{comment.body | summary:50}} </p>
       <like (change)="onLikeUpdate($event)" [isLike]="comment.isLike" [likeCount]="comment.likeCount"></like>
     </div> 
   </div>

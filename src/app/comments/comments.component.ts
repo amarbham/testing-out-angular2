@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from './comments.service';
+import { SummaryPipe } from '../summary.pipe';
 
 @Component({
   selector: 'comments',

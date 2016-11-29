@@ -12,6 +12,7 @@ import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NavComponent } from './nav/nav.component';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NavComponent } from './nav/nav.component';
     VoterComponent,
     CommentsComponent,
     NavComponent,
+    SummaryPipe,
   ],
   imports: [
     BrowserModule,
