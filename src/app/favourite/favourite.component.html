@@ -1,6 +1,10 @@
 <a class="pure-button" href="#" (click)="toggleFavourite()">
   <i class="fa fa-sm" 
-    [class.fa-star]="isFavourite"
-    [class.fa-star-o]="!isFavourite">
+    [ngClass]="{ 
+        'fa-star': isFavourite,
+        'fa-star-o': !isFavourite
+      }">
   </i>
 </a>
+<!--[class.fa-star]="isFavourite"
+    [class.fa-star-o]="!isFavourite"-->
