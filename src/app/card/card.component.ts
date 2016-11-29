@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'card',
@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CardComponent  {
 
-  constructor() { }
-
+  @Input() title = 'This is a card title';
+  @Input() description = "This is the card description";
 }

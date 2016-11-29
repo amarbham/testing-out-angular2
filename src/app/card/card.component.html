@@ -1,10 +1,14 @@
 <article class="card-container">
     <div class="card-body">
       <div class="card-title">
-        <h4>A card title</h4>
+          <!--<ng-content select="[card-title]"></ng-content>-->
+
+          <h4>{{title}}</h4>
       </div>
       <div class="card-description">
-        <p>A card description</p>
+          <!--<ng-content select="[card-description]"></ng-content>-->
+         <p>{{description}}</p> 
+        <button class="button-xsmall pure-button">Click here</button>
       </div>
     </div>
 </article>

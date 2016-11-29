@@ -2,7 +2,8 @@ import { Course } from './courses.model';
 
 export const Courses: Course[] = [
     {
-        title: 'Angular',
+        title: 'Angular2',
+        description: 'Learn Angular2 With Amar!',
         rating: 4.9745,
         students: 5981,
         price: 99.95,
@@ -10,6 +11,7 @@ export const Courses: Course[] = [
     },
     {
         title: 'TypeScript',
+        description: "Learn TypeScript with Amar!",
         rating: 3.959,
         students: 5551,
         price: 69.95,
