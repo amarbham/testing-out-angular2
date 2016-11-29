@@ -9,7 +9,7 @@ img {
 .comment {
     width: 100%;
     padding: .8em 1em 0;
-    background: hsla(31,15%,50%,.1);
+    background: #eee;
     border-radius: 3px;
 }
 

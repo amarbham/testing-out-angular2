@@ -2,6 +2,7 @@
   <div class="pure-u-1-5"></div>
   <div class="pure-u-3-5">
     <app-nav (change)="onViewChange($event)"></app-nav>
+
     <div [ngSwitch]="viewMode">
         <div *ngSwitchCase="'courses'">
           <courses> </courses>

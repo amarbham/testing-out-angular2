@@ -13,6 +13,7 @@ import { VoterComponent } from './voter/voter.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NavComponent } from './nav/nav.component';
 import { SummaryPipe } from './summary.pipe';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SummaryPipe } from './summary.pipe';
     CommentsComponent,
     NavComponent,
     SummaryPipe,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
