@@ -1,0 +1,9 @@
+<div class="accordion-body">
+  <div (click)="toggle()">
+    {{title}}
+  </div>
+  <div *ngIf="isExpanded">
+    <ng-content></ng-content> 
+  </div>
+
+</div>

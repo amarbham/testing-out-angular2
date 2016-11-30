@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Authors } from './authors.mock';
 
 @Injectable()
 export class AuthorsService {
 
   getAuthors(){
-    return ['author1', 'author2', 'author3'];
+    return Promise.resolve(Authors)
   }
 
 }

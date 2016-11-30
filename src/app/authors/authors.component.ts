@@ -11,7 +11,10 @@ export class AuthorsComponent {
   title = "A title by an author";
 
   constructor( authorsService :AuthorsService) { 
-    this.authors = authorsService.getAuthors();
+    authorsService.getAuthors()
+      .then(authors => {
+        return this.authors = authors
+      })
   }
 
 }

@@ -14,6 +14,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { NavComponent } from './nav/nav.component';
 import { SummaryPipe } from './summary.pipe';
 import { CardComponent } from './card/card.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CardComponent } from './card/card.component';
     NavComponent,
     SummaryPipe,
     CardComponent,
+    AccordionComponent,
   ],
   imports: [
     BrowserModule,

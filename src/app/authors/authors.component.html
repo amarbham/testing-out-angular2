@@ -3,5 +3,14 @@
 </header>
 
 <ul>
-  <li *ngFor="let author of authors">{{author}}</li>
+  <li *ngFor="let author of authors">
+    <accordion [title]="author.name + ' Expand'">
+        <p>{{author.description}}</p>
+    </accordion>
+  </li>
 </ul>
+
+
+
+
+
