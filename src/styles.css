@@ -29,6 +29,10 @@ a {
     text-align: center;
 }
 
+img#card-image{
+    width: 100%;
+}
+
 input[type="text"] {
     width: 120px;
     transition: width 1s;

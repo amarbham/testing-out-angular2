@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent  {
 
-  @Input() title = 'This is a card title';
-  @Input() description = "This is the card description";
+  // @Input() title = 'This is a card title';
+  // @Input() description = "This is the card description";
 }

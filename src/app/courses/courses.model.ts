@@ -4,5 +4,6 @@ export class Course {
     rating: number;
     students: number;
     price: number;
-    releaseDate: any
+    releaseDate: any;
+    image: string;
 }

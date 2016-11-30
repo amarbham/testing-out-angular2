@@ -14,9 +14,13 @@
           <p>Released - {{course.releaseDate | date: 'fullDate' | uppercase}}</p>
       </li>
   </ul>
-  <card *ngFor="let course of courses" 
-    [title]="course.title" 
-    [description]="course.description">
+
+  <card *ngFor="let course of courses">
+      <div card-title>{{course.title}}</div>
+      <img card-image *ngIf="course.image" [src]="course.image" alt="image" id="card-image">
+      <div card-description> {{course.description}}</div>
   </card>
+
+
   <div class="clearfix"> </div>
 </div>
