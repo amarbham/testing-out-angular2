@@ -9,15 +9,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactFormComponent  {
 
-  powers = ['Really Smart', 'Super Flexible', 
+  powers = ['Lightning Speed', 'Really Smart', 'Super Flexible', 
             'Super Hot', 'Weather Changer']
 
   submitted = false;
 
-  model = new User('Amar', '123 London Road', 'London', 'W5 1AA','');
+  model = new User('Amar', '123 London Road', 'London', 'W5 1AA','', '');
 
   onSubmit() {
     this.submitted = true;
+  }
+
+  newUser(){
+    this.model = new User('','','','','','');
   }
 
   get diagnostic(){

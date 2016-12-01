@@ -4,6 +4,7 @@ export class User {
         public address: string,
         public city: string,
         public postcode: string,
+        public power: any,
         public comment: string,
     ) { }
 }

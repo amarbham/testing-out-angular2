@@ -1,45 +1,126 @@
-<form class="pure-form pure-form-aligned">
-    <fieldset>
+<h3>Template Driven form</h3>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <fieldset [hidden]="submitted" class="pure-form pure-form-aligned">
         <div class="pure-control-group">
             <label for="name" placeholder="Name">Name:</label>
-            <input id="name" type="text" autocomplete="off" class="pure-input-1-4" required>
+            <input id="name" 
+                   type="text"
+                   autocomplete="off" 
+                   class="pure-input-1-4" 
+                   [(ngModel)]="model.name" 
+                   name="name" 
+                   required
+                   #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-error"> Name is required</div>
         </div>
 
         <div class="pure-control-group">
             <label for="address" placeholder="address">Address:</label>
-            <input id="address" type="text" autocomplete="off" class="pure-input-1-4">
+            <input id="address" 
+                   type="text"
+                   autocomplete="off"
+                   class="pure-input-1-4"
+                   [(ngModel)]="model.address"
+                   name="address"
+                   required
+                   #address="ngModel">
+            <div [hidden]="address.valid || address.pristine" class="alert alert-error"> Address is required</div>
         </div>
 
         <div class="pure-control-group">
             <label for="city" placeholder="city">City:</label>
-            <input id="city" type="text" autocomplete="off">
+            <input id="city" 
+                   type="text"
+                   autocomplete="off"
+                   [(ngModel)]="model.city"
+                   name="city"
+                   required
+                   #city="ngModel">
+             <div [hidden]="city.valid || city.pristine" class="alert alert-error"> City is required</div>
         </div>
 
         <div class="pure-control-group">
             <label for="post-code" placeholder="Post code">Post code:</label>
-            <input id="post-code" type="text" autocomplete="off">
+            <input id="post-code" 
+                   type="text"
+                   autocomplete="off"
+                   [(ngModel)]="model.postcode"
+                   name="postcode"
+                   required
+                   #postcode="ngModel">
+            <div [hidden]="postcode.valid || postcode.pristine" class="alert alert-error"> Postcode is required</div>
         </div>
 
         <div class="pure-control-group">
           <label for="comment">Comment</label>
-          <textarea id="comment" cols="30" rows="3"></textarea>
+          <textarea id="comment" 
+                    cols="30" 
+                    rows="3"
+                    [(ngModel)]="model.comment"
+                    name="comment">
+         </textarea>
         </div>
 
         <div class="pure-control-group">
             <label for="powers">Powers</label>
-             <select class="form-control" id="power" required>
-                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+             <select class="form-control" [(ngModel)]="model.power" name="power" id="power">
+                <option selected disabled>Select power</option>
+                <option *ngFor="let power of powers" 
+                        [value]="power">
+                        {{power}}
+               </option>
             </select>
         </div>
 
         <div class="pure-controls">
             <label for="cb" class="pure-checkbox">
-                <input id="cb" type="checkbox"> Confirm details are correct
+                <input id="cb" 
+                       type="checkbox" 
+                       [(ngModel)]="model.confirm"
+                       name="confirm"
+                       #confirm
+                       required> 
+                 <div [hidden]="confirm.valid"> Confirm details are correct </div>
             </label>
+            {{confirm.classNames}}
+                        
+            <button type="button" 
+                    class="pure-button pure-button-primary" 
+                    (click)="onSubmit();"
+                    [disabled]="!userForm.form.valid">
+                    Submit
+            </button>
 
-            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+            <button type="button" 
+                    class="pure-button" 
+                   (click)="newUser(); userForm.reset()">
+                   New User
+            </button>
         </div>
 
-
     </fieldset>
+
+    <fieldset [hidden]="!submitted" class="pure-form">
+           <div class="submit-summary">
+               <strong>New User</strong>
+               <p>
+                Name: {{model.name}}  <br>
+                Address: {{model.address}}  <br>
+                City: {{model.city}} <br>
+                Post Code: {{model.postcode}} <br>
+                Power: {{model.power}} <br>
+                Comments: {{model.comments}} <br>
+               </p>
+           </div>
+
+          <div class="pure-controls">
+            <button type="button" 
+                    class="pure-button pure-button-primary" 
+                    (click)="submitted = false;">
+                    Edit
+            </button>
+        </div>
+    </fieldset>
+
 </form>
