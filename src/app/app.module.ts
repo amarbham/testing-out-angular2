@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -15,6 +14,7 @@ import { NavComponent } from './nav/nav.component';
 import { SummaryPipe } from './summary.pipe';
 import { CardComponent } from './card/card.component';
 import { AccordionComponent } from './accordion/accordion.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { AccordionComponent } from './accordion/accordion.component';
     SummaryPipe,
     CardComponent,
     AccordionComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,

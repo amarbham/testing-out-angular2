@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  viewMode = 'courses';
+  viewMode = 'contact';
   post = {
     title: "Title",
     isFavourite: true,
@@ -17,7 +18,7 @@ export class AppComponent {
     console.log($event)
   }
 
-  onViewChange($event){
+  onViewChange($event) {
     this.viewMode = $event.view;
   }
 
