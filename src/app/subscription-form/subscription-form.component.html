@@ -1,0 +1,156 @@
+<h3>Template Driven form</h3>
+
+<form #subscriptionForm="ngForm" (ngSubmit)="onSubmit()">
+  <fieldset class="pure-form pure-form-aligned" [hidden]="submitted">
+    <div class="pure-control-group">
+      <label for="name" placeholder="name">Name:</label>
+      <input type="text"
+             autocomplete="off" 
+             class="pure-input-1-4"
+             [(ngModel)]="model.name"
+             name="name"
+             (change)="log(name)"
+             #spy
+             #name="ngModel"
+             required>
+      <span [hidden]="name.valid || name.untouched" class="alert alert-error">Name is required</span>
+    </div>
+    <div class="pure-control-group">
+      <label for="email" placeholder="email">Email:</label>
+      <input type="text"
+             autocomplete="off" 
+             class="pure-input-1-4"
+             [(ngModel)]="model.email"
+             name="email"
+             (change)="log(email)"
+             #spy
+             #email="ngModel"
+             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+             required>
+      <span [hidden]="email.valid || email.untouched" class="alert alert-error">Email is invalid</span>
+      <!--<span [hidden]="email.valid || email.untouched" class="alert alert-error">Must be a valid email</span>
+        use a validator instead
+      -->
+    </div>
+    <div class="pure-control-group">
+      <label for="subscription">Frequency of emails</label>
+      <select name="subscription" [(ngModel)]="model.frequency" class="form-control" required>
+        <option selected disabled>Please select</option>
+        <option *ngFor="let freq of frequency" 
+                [value]="freq">
+                {{freq}}
+       </option>
+      </select>
+    </div>
+    <div class="pure-control">
+      <button class="pure-button pure-button-primary" 
+              type="submit"
+              style="margin-left: 182px;"
+              [disabled]="!subscriptionForm.form.valid">Submit</button>
+    </div>
+
+  </fieldset>
+</form>
+
+<section *ngIf="submitted" class="submission">
+  <strong>Your subscription has been submitted</strong>
+  <p>
+    Name: {{model.name}} <br>
+    Email: {{model.email}} <br>
+    frequency: {{model.frequency}} <br>
+  </p>
+
+  <button type="button" class="pure-button" (click)="submitted = false">
+    Edit
+  </button>
+</section>
+
+<section class="diagnostic">
+  <div style="background:#eee">
+    <pre>
+      Form Valid: {{subscriptionForm.form.valid}}
+      Classes: {{spy.className}}
+    </pre>
+  </div>
+  <div style="background:#eee">
+    <pre>
+      {{diagnostic}}
+    </pre>
+  </div>
+  <div style="clear:both;"></div>
+</section>
+<!--
+</form>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <fieldset [hidden]="submitted" class="pure-form pure-form-aligned">
+        <div class="pure-control-group">
+            <label for="name" placeholder="Name">Name:</label>
+            <input id="name" 
+                   type="text"
+                   autocomplete="off" 
+                   class="pure-input-1-4" 
+                   [(ngModel)]="model.name" 
+                   name="name" 
+                   required
+                   #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-error"> Name is required</div>
+        </div>
+
+        <div class="pure-control-group">
+            <label for="address" placeholder="address">Address:</label>
+            <input id="address" 
+                   type="text"
+                   autocomplete="off"
+                   class="pure-input-1-4"
+                   [(ngModel)]="model.address"
+                   name="address"
+                   required
+                   #address="ngModel">
+            <div [hidden]="address.valid || address.pristine" class="alert alert-error"> Address is required</div>
+        </div>
+
+        <div class="pure-control-group">
+            <label for="city" placeholder="city">City:</label>
+            <input id="city" 
+                   type="text"
+                   autocomplete="off"
+                   [(ngModel)]="model.city"
+                   name="city"
+                   required
+                   #city="ngModel">
+             <div [hidden]="city.valid || city.pristine" class="alert alert-error"> City is required</div>
+        </div>
+
+        <div class="pure-control-group">
+            <label for="post-code" placeholder="Post code">Post code:</label>
+            <input id="post-code" 
+                   type="text"
+                   autocomplete="off"
+                   [(ngModel)]="model.postcode"
+                   name="postcode"
+                   required
+                   #postcode="ngModel">
+            <div [hidden]="postcode.valid || postcode.pristine" class="alert alert-error"> Postcode is required</div>
+        </div>
+
+        <div class="pure-control-group">
+          <label for="comment">Comment</label>
+          <textarea id="comment" 
+                    cols="30" 
+                    rows="3"
+                    [(ngModel)]="model.comment"
+                    name="comment">
+         </textarea>
+        </div>
+
+
+        <div class="pure-controls">
+            <button type="button" 
+                    class="pure-button pure-button-primary">
+                    Submit
+            </button>
+        </div>
+
+    </fieldset>
+
+</form>-->

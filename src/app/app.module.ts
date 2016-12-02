@@ -15,6 +15,7 @@ import { SummaryPipe } from './summary.pipe';
 import { CardComponent } from './card/card.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     CardComponent,
     AccordionComponent,
     ContactFormComponent,
+    SubscriptionFormComponent,
   ],
   imports: [
     BrowserModule,

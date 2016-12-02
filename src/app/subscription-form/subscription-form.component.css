@@ -1,0 +1,28 @@
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+span.alert.alert-error {
+    padding: 0 0 0 5px;
+    color: #a94442;
+}
+
+input:required:focus {
+  border-style:  solid;
+  border-color:  #a94442;
+  border-width: 1px 1px 1px 5px;
+  outline: none;
+  color: #000;
+}
+
+select:required:focus {
+  border-style:  solid;
+  border-color:  #a94442;
+  border-width: 1px 1px 1px 5px;
+  outline: none;
+  color: #000;
+}
