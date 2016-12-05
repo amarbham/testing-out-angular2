@@ -6,7 +6,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  viewMode = 'subscription';
+  viewMode = 'observables';
   post = {
     title: "Title",
     isFavourite: true,
