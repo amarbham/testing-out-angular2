@@ -1,25 +1,22 @@
 <h3>Template Driven form</h3>
 
-<form #subscriptionForm="ngForm" (ngSubmit)="onSubmit()">
+<form #subscriptionForm="ngForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
   <fieldset class="pure-form pure-form-aligned" [hidden]="submitted">
     <legend class="legend-custom">Subscription</legend>
     <div class="pure-control-group">
       <label for="name" placeholder="name">Name:</label>
-      <input type="text"
-             autocomplete="off" 
+      <input type="text" 
              class="pure-input-1-4"
              [(ngModel)]="model.name"
              name="name"
              (change)="log(name)"
-             #spy
              #name="ngModel"
              required>
       <span [hidden]="name.valid || !name.dirty" class="alert alert-error">Name is required</span>
     </div>
     <div class="pure-control-group">
       <label for="email" placeholder="email">Email:</label>
-      <input type="text"
-             autocomplete="off" 
+      <input type="text" 
              class="pure-input-1-4"
              [(ngModel)]="model.email"
              name="email"
@@ -28,10 +25,18 @@
              #email="ngModel"
              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
              required>
-      <span [hidden]="email.valid || !email.dirty" class="alert alert-error">Email is invalid</span>
-      <!--<span [hidden]="email.valid || email.untouched" class="alert alert-error">Must be a valid email</span>
-        use a validator instead
-      -->
+
+    <div *ngIf="email.errors" [hidden]="email.untouched" class="error-container">
+        <!--<span [hidden]="email.untouched && !email.errors.required " class="alert alert-error">Email is required</span>-->
+        <span [hidden]="!email.errors.pattern" class="alert alert-error">Enter a valid email </span>
+        <span [hidden]="!email.errors.required" class="alert alert-error">Email is required</span>
+    </div>
+    <br>
+    {{spy.className}}
+    <p>
+      {{email.errors | json}}
+    </p>
+      <button type="button" (click)="log(email)">log </button>
     </div>
     <div class="pure-control-group">
       <label for="subscription">Frequency of emails</label>
@@ -51,6 +56,8 @@
     </div>
 
   </fieldset>
+
+  <br>
 </form>
 
 <section *ngIf="submitted" class="submission">
@@ -69,12 +76,11 @@
 <section class="diagnostic">
   <div style="background:#eee">
     <pre>
-      Form Valid: {{subscriptionForm.form.valid}}
-      Classes: {{spy.className}}
+      Form Valid: {{subscriptionForm.valid}}
     </pre>
   </div>
   <div style="background:#eee">
-    <pre>
+    <pre>{{subscriptionForm.value | json}} <br>
       {{diagnostic}}
     </pre>
   </div>

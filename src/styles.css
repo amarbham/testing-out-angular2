@@ -59,3 +59,7 @@ input[type="text"] {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+.error-container {
+    display: inline-block;
+}
