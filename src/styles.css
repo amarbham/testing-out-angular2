@@ -29,6 +29,13 @@ a {
     text-align: center;
 }
 
+legend.legend-custom {
+    display: block;
+    width: auto;
+    border: 0;
+    padding: .3em 20px;
+}
+
 img#card-image{
     width: 100%;
 }
