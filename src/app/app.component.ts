@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  providers: [QuestionService]
 })
 export class AppComponent {
-  viewMode = 'observables';
+  viewMode = 'dynamic-form';
+  questions: any;
+
   post = {
     title: "Title",
     isFavourite: true,
@@ -24,5 +28,9 @@ export class AppComponent {
 
   logEvent($event) {
     console.log('event', $event)
+  }
+
+  constructor(qs: QuestionService){
+     this.questions = qs.getQuestions();
   }
 }

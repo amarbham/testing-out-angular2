@@ -20,6 +20,9 @@
         <div *ngSwitchCase="'observables'">
           <observables></observables>
         </div>
+        <div *ngSwitchCase="'dynamic-form'">
+            <dynamic-form [questions]="questions"></dynamic-form>
+        </div>
     </div>
     <h1>{{title}} </h1>
     <input type="text" [(ngModel)]="title">

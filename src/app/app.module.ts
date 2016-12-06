@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
@@ -17,6 +18,8 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { ObservablesComponent } from './observables/observables.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,12 @@ import { ObservablesComponent } from './observables/observables.component';
     ContactFormComponent,
     SubscriptionFormComponent,
     ObservablesComponent,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    ReactiveFormsModule,
     FormsModule,
     HttpModule
   ],
