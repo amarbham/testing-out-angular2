@@ -17,6 +17,7 @@ import { CardComponent } from './card/card.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
+import { ModelFormComponent } from './model-form/model-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SubscriptionFormComponent } from './subscription-form/subscription-form
     AccordionComponent,
     ContactFormComponent,
     SubscriptionFormComponent,
+    ModelFormComponent,
   ],
   imports: [
     BrowserModule, 
