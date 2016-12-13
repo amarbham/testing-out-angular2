@@ -1,3 +1,26 @@
-<p>
-  model-form works!
-</p>
+<h3>Model-Driven Forms</h3>
+
+<form autocompete="off" novalidate>
+  <fieldset class="pure-form pure-form-aligned">
+    <legend class="legend-custom">Create new lesson</legend>
+    <div class="pure-control-group">
+      <label for="title" placeholder="title">Title: </label>
+      <input type="text"
+             class="pure-input-1-4" 
+             name="title">
+    </div>
+    <div class="pure-control-group">
+      <label for="duration" placeholder="duration">Duration: </label>
+      <input type="text"
+             class="pure-input-1-4" 
+             name="duration">
+    </div>
+    <div class="pure-control-group">
+      <label for="description" placeholder="description">Description: </label>
+      <textarea></textarea>
+    </div>
+    <div class="pure-control-group">
+      <button type="button" class="pure-button pure-button-primary button--aligned">Submit</button>
+    </div>
+  </fieldset>
+</form>

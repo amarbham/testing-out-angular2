@@ -29,6 +29,10 @@ a {
     text-align: center;
 }
 
+.button--aligned {
+    margin-left: 182px;
+}
+
 legend.legend-custom {
     display: block;
     width: auto;
