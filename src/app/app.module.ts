@@ -17,9 +17,6 @@ import { CardComponent } from './card/card.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
-import { ObservablesComponent } from './observables/observables.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +34,6 @@ import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-fo
     AccordionComponent,
     ContactFormComponent,
     SubscriptionFormComponent,
-    ObservablesComponent,
-    DynamicFormComponent,
-    DynamicFormQuestionComponent,
   ],
   imports: [
     BrowserModule, 

@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  providers: [QuestionService]
+  providers: []
 })
 export class AppComponent {
-  viewMode = 'dynamic-form';
+  viewMode = 'model-driven-form';
   questions: any;
 
   post = {
@@ -30,7 +29,5 @@ export class AppComponent {
     console.log('event', $event)
   }
 
-  constructor(qs: QuestionService){
-     this.questions = qs.getQuestions();
-  }
+  constructor(){}
 }
