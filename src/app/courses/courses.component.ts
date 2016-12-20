@@ -12,7 +12,6 @@ export class CoursesComponent implements OnInit {
 
   title = "The title of the courses page";
   courses;
-  isHighlight = true;
 
   constructor(private coursesService : CoursesService){ }
 
