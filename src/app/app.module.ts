@@ -19,6 +19,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { ModelFormComponent } from './model-form/model-form.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { ColourPickerComponent } from './colour-picker/colour-picker.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     SubscriptionFormComponent,
     ModelFormComponent,
     SearchBoxComponent,
+    ColourPickerComponent,
   ],
   imports: [
     BrowserModule, 

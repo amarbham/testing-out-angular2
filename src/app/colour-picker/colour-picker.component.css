@@ -1,0 +1,7 @@
+div.colour-preview {
+  display: inline-block;
+  height: 23px;
+  width: 23px;
+  border: 1px #eee solid;
+  transform: translatey(25%);
+}

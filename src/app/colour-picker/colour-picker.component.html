@@ -1,0 +1,7 @@
+<input type="text" 
+       name="colour"
+       #colour
+       (keyup)="choose(colour)">
+<div class="colour-preview" [ngStyle]="{'background-color': setColour}"></div>
+
+{{colour.color}}
