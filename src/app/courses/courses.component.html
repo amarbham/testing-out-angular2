@@ -2,8 +2,7 @@
   <h3>Courses <i class="fa fa-book"></i></h3>
 </header>
 <div class="content">
-  <input type="text" [value]="title" autoGrow> 
-      <button class="pure-button pure-button-primary">Submit</button>
+    <search-box [placeholder]="'Search for courses'"></search-box>
   <ul>
       <li *ngFor="let course of courses, let i = index" 
           [style.backgroundColor]="isHighlight ? '#EEEEEE' : 'grey'">

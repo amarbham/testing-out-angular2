@@ -7,7 +7,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   providers: []
 })
 export class AppComponent {
-  viewMode = 'model-form';
+  viewMode = 'courses';
   questions: any;
 
   post = {

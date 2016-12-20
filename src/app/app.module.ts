@@ -18,6 +18,7 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { ModelFormComponent } from './model-form/model-form.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ModelFormComponent } from './model-form/model-form.component';
     ContactFormComponent,
     SubscriptionFormComponent,
     ModelFormComponent,
+    SearchBoxComponent,
   ],
   imports: [
     BrowserModule, 
