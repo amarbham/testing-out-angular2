@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { coloursData } from './colours.mock';
 
 @Component({
   selector: 'colour-picker',
@@ -12,24 +13,7 @@ export class ColourPickerComponent  {
 
   setColour;
 
-  colours:any = [
-    {
-      name: 'red',
-      hex: '#ff0000'
-    },
-    {
-      name: 'blue',
-      hex: '#0000ff'
-    }, 
-    {
-      name: 'yellow',
-      hex: '#ffff00'
-    }, 
-    {
-      name: 'green',
-      hex: '#00ff00'
-    }
-  ]
+  colours = coloursData;
 
   choose(elem){
     const findColour = this.colours.find(colour => {
