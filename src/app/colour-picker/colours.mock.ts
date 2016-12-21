@@ -1,4 +1,6 @@
-export const coloursData = [
+import { Colour } from './colours.model'
+
+export const Colours: Colour[] = [
     {
         name: 'red',
         hex: '#ff0000'

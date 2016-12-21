@@ -1,19 +1,20 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { coloursData } from './colours.mock';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { ColourPickerService } from './colour-picker.service';
 
 @Component({
   selector: 'colour-picker',
   templateUrl: './colour-picker.component.html',
-  styleUrls: ['./colour-picker.component.css']
+  styleUrls: ['./colour-picker.component.css'],
+  providers: [ColourPickerService]
 })
-export class ColourPickerComponent  {
+export class ColourPickerComponent implements OnInit {
 
   @Output() change = new EventEmitter();
 
-
+  colours
   setColour;
 
-  colours = coloursData;
+  constructor(private colourPickerService: ColourPickerService){ }
 
   choose(elem){
     const findColour = this.colours.find(colour => {
@@ -23,5 +24,12 @@ export class ColourPickerComponent  {
     if (findColour){
       this.setColour = findColour.hex;
     };
+  }
+
+  ngOnInit(){
+    this.colourPickerService.getColours()
+      .then(colours => {
+        return this.colours = colours;
+      })
   }
 }
