@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { ColourPickerService } from './colour-picker.service';
+import { Colour } from './colours.model';
 
 @Component({
   selector: 'colour-picker',
@@ -11,7 +12,7 @@ export class ColourPickerComponent implements OnInit {
 
   @Output() change = new EventEmitter();
 
-  colours
+  colours: Colour[];
   setColour;
 
   constructor(private colourPickerService: ColourPickerService){ }
@@ -28,8 +29,7 @@ export class ColourPickerComponent implements OnInit {
 
   ngOnInit(){
     this.colourPickerService.getColours()
-      .then(colours => {
-        return this.colours = colours;
-      })
+      .subscribe(
+        colours => this.colours = colours)
   }
 }
