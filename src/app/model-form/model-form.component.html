@@ -1,26 +1,40 @@
 <h3>Model-Driven Forms</h3>
 
-<form autocompete="off" novalidate>
+<form [formGroup]="myForm" autocompete="off" novalidate (ngSubmit)="onSubmit(myForm)">
   <fieldset class="pure-form pure-form-aligned">
     <legend class="legend-custom">Create new lesson</legend>
     <div class="pure-control-group">
       <label for="title" placeholder="title">Title: </label>
       <input type="text"
              class="pure-input-1-4" 
-             name="title">
+             formControlName="title">
+    <div *ngIf="myForm.get('title').touched">
+      <p *ngIf="myForm.get('title').hasError('required')">Title is required</p>
+      <p *ngIf="myForm.get('title').hasError('minlength')">Title must have a mininum length of 5</p>
+    </div>
     </div>
     <div class="pure-control-group">
       <label for="duration" placeholder="duration">Duration: </label>
       <input type="text"
-             class="pure-input-1-4" 
-             name="duration">
+             class="pure-input-1-4"
+             formControlName="duration">
+      <div *ngIf="myForm.get('duration').touched">
+        <p *ngIf="myForm.get('duration').hasError('required')">Lesson duration is required</p>
+        <p *ngIf="myForm.get('duration').hasError('pattern')">Lesson duration must be a number</p>
+      </div>
+        
     </div>
     <div class="pure-control-group">
-      <label for="description" placeholder="description">Description: </label>
-      <textarea></textarea>
+      <label for="description" placeholder="description" >Description: </label>
+      <textarea formControlName="description"></textarea>
     </div>
     <div class="pure-control-group">
-      <button type="button" class="pure-button pure-button-primary button--aligned">Submit</button>
+      <button [disabled]="myForm.invalid" type="submit" class="pure-button pure-button-primary button--aligned">Create lesson</button>
     </div>
   </fieldset>
+<pre>
+{{myForm.status}}
+
+{{myForm.value | json}}
+</pre>
 </form>
