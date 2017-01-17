@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -20,6 +21,14 @@ import { SubscriptionFormComponent } from './subscription-form/subscription-form
 import { ModelFormComponent } from './model-form/model-form.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { ColourPickerComponent } from './colour-picker/colour-picker.component';
+
+const appRoutes: Routes = [
+  { path: 'courses', component: CoursesComponent },
+  { path: 'authors', component: AuthorsComponent },
+  { path: 'contact', component: ContactFormComponent },
+  { path: 'subscription', component: SubscriptionFormComponent },
+  { path: 'model-form', component: ModelFormComponent },
+];
 
 @NgModule({
   declarations: [
@@ -44,10 +53,13 @@ import { ColourPickerComponent } from './colour-picker/colour-picker.component';
   imports: [
     BrowserModule, 
     ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+

@@ -1,26 +1,8 @@
 <div class="pure-g">
   <div class="pure-u-1-5"></div>
   <div class="pure-u-3-5">
-    <app-nav (change)="onViewChange($event)"></app-nav>
-
-    <div [ngSwitch]="viewMode">
-        <div *ngSwitchCase="'courses'">
-          <courses> </courses>
-          <comments></comments>
-        </div>
-        <div *ngSwitchCase="'authors'">
-          <authors></authors>
-        </div>
-        <div *ngSwitchCase="'contact'">
-          <contact-form></contact-form>
-        </div>
-        <div *ngSwitchCase="'subscription'">
-          <subscription-form></subscription-form>
-        </div>
-        <div *ngSwitchCase="'model-form'">
-            <model-form></model-form>
-        </div>
-    </div>
+    <app-nav></app-nav>
+    <router-outlet></router-outlet>
     <h1>{{title}} </h1>
     <input type="text" [(ngModel)]="title">
     <input type="button" class="pure-button " (click)="title = ''" value="Clear">

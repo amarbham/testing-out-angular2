@@ -7,7 +7,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   providers: []
 })
 export class AppComponent {
-  viewMode = 'contact';
   questions: any;
 
   post = {
@@ -19,10 +18,6 @@ export class AppComponent {
 
   onFavouriteChange($event) {
     console.log($event)
-  }
-
-  onViewChange($event) {
-    this.viewMode = $event.view;
   }
 
   logEvent($event) {
